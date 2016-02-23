@@ -60,7 +60,7 @@ end
 
 def install_package
   require 'rinruby'
-  R.eval "install.packages('#{new_resource.package}')", false
+  R.eval "install.packages('#{new_resource.package}', lib = '/usr/lib/R/library', repo = 'http://cran.us.r-project.org')", false
 end
 
 def remove_package
